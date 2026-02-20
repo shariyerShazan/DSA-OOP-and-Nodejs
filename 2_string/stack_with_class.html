@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Stack {
+      stack = [];
+      currentIndex;
+      maxIndex;
+      constructor(size) {
+        this.maxIndex = size;
+        this.currentIndex = 0;
+      }
+      push(newValue) {
+        if (this.currentIndex >= this.maxIndex) {
+          alert("error!");
+        } else {
+          this.stack[this.currentIndex] = newValue;
+          this.currentIndex++;
+        }
+      }
+      pop() {
+        if (this.currentIndex <= 0) {
+          alert("error!");
+        } else {
+          this.currentIndex--;
+          const removedValue = this.stack[this.currentIndex];
+          this.stack.length = this.currentIndex;
+          return removedValue;
+        }
+      }
+      reverse(string) {
+        let splitedString = string.split("");
+        for (let i = 0; i < splitedString.length; i++) {
+          this.push(splitedString[i]);
+        }
+        for (let i = 0; i < splitedString.length; i++) {
+          splitedString[i] = this.pop();
+        }
+        return splitedString.join("");
+      }
+    }
+    const myStack = new Stack(10);
+    document.write(myStack.reverse("shazan"));
+  </script>
+</html>

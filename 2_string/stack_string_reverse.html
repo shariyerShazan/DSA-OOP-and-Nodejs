@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <body>
+    <script>
+      const name = "shazan";
+      let splitedName = name.split("");
+
+      let stack = [];
+      let currentIndex = 0;
+      let max = 10;
+
+      const push = (val) => {
+        if (currentIndex >= max) {
+          alert("Stack Overflow");
+          return;
+        }
+
+        stack[currentIndex] = val;
+        currentIndex++;
+      };
+
+      const pop = () => {
+        if (currentIndex <= 0) {
+          alert("Stack Underflow");
+          return;
+        }
+
+        currentIndex--;
+        const removed = stack[currentIndex];
+        stack.length = currentIndex;
+        return removed;
+      };
+
+      const reverseString = (strArr) => {
+        for (let i = 0; i < strArr.length; i++) {
+          push(strArr[i]);
+        }
+
+        for (let i = 0; i < strArr.length; i++) {
+          strArr[i] = pop();
+        }
+
+        return strArr.join("");
+      };
+
+      document.write(reverseString(splitedName));
+    </script>
+  </body>
+</html>

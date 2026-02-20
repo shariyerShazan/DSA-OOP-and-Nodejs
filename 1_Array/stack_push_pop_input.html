@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [12];
+    let max = 10;
+    let currentLength = arr.length;
+    const push = (val) => {
+      if (currentLength >= max) {
+        alert("can't")
+      } else {
+        arr[currentLength] = val;
+        currentLength++;
+      }
+    };
+    push(55)
+    push(22)
+    const pop = () => {
+      if (currentLength <= 0) {
+        alert("Can't");
+      } else {
+        currentLength--;
+        arr.length = currentLength;
+      }
+    };
+    pop()
+    // pop()
+    document.write(arr);
+  </script>
+</html>
