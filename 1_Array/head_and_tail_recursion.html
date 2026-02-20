@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+        document.write("Head <br/> ")
+    const headRecursion = (x) => {
+      document.write(x,  "<br/>");
+      if (x > 0) {
+        headRecursion(x - 1);
+      }
+    };
+    headRecursion(5);
+     document.write("Tail <br/> ")
+    const tailRecursion = (x) => {
+      if (x > 0) {
+        tailRecursion(x - 1);
+      }
+      document.write(x,  "<br/>");
+    };
+    tailRecursion(5);
+  </script>
+</html>

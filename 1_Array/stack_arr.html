@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [];
+    let currentSize = arr.length;
+    let max = 5;
+    const pushInArr = (val) => {
+      if (currentSize >= max) {
+        alert("Array lenght can't be bigger then 5");
+      } else {
+        arr[currentSize] = val;
+        currentSize++;
+      }
+    };
+
+    pushInArr(22);
+    pushInArr(23);
+    pushInArr(24);
+    pushInArr(25);
+    pushInArr(26);
+
+    document.write("After push : ",arr, "<br/>");
+ 
+    const popInArr = ()=> {
+        if(currentSize <= 0){
+            alert("Array lenght con't be negetive")
+        }else{
+            currentSize--
+            arr.length = currentSize
+        }
+    }
+    popInArr()
+    popInArr()
+    popInArr()
+    document.write("After pop : ",arr)
+  </script>
+</html>

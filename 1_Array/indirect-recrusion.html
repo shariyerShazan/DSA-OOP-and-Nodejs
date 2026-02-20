@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let money = 500;
+    let apple = 0;
+    const buyApple = (money) => {
+      if (money > 0) {
+        buyMoreApple(money);
+        //    document.write("total buyed apple" , )
+      } else {
+        document.write(
+          "i don't have money to buy!",
+          "and total buyed = ",
+          apple,
+        );
+      }
+    };
+    const buyMoreApple = (money) => {
+      apple++;
+      buyApple(money - 25);
+    };
+    buyApple(money);
+  </script>
+</html>
