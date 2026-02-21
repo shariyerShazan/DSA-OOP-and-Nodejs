@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Queue {
+  constructor(size) {
+    this.data = [];
+    this.front = 0;
+    this.rear = 0;
+    this.max = size;
+  }
+
+  enqueue(value) {
+    if (this.rear >= this.max) {
+      console.log("Queue Overflow");
+      return;
+    }
+    this.data[this.rear] = value;
+    this.rear++;
+  }
+
+  dequeue() {
+    if (this.front === this.rear) {
+      console.log("Queue Underflow");
+      return;
+    }
+
+    const removed = this.data[this.front];
+    
+    // shift manually
+    for (let i = 0; i < this.rear - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    this.rear--;
+    this.data.length = this.rear;
+
+    return removed;
+  }
+}
+
+// Test
+const q = new Queue(5);
+q.enqueue(10);
+q.enqueue(20);
+q.enqueue(30);
+
+console.log(q.dequeue()); // 10
+console.log(q.data);      // [20, 30]
+</script>
+</html>
