@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heart Animation</title>
+</head>
+<body style="margin:0; background:black;">
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// center point
+const cx = canvas.width / 2;
+const cy = canvas.height / 2;
+
+// heart functions
+function heart(k) {
+  return 15 * Math.pow(Math.sin(k), 3);
+}
+
+function heart1(k) {
+  return (
+    12 * Math.cos(k) -
+    5 * Math.cos(2 * k) -
+    2 * Math.cos(3 * k) -
+    Math.cos(4 * k)
+  );
+}
+
+ctx.fillStyle = "pink";
+
+for (let i = 0; i < 6000; i++) {
+  let x = heart(i) * 20;
+  let y = heart1(i) * 20;
+
+  ctx.fillRect(cx + x, cy - y, 2, 2); // draw small pixel
+}
+</script>
+</body>
+</html>
