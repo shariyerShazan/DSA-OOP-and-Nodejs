@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array!</title>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getElement()">Get Element</button>
+
+    <script>
+      let arr = [34, 65, 23, 56, 76, 98, 24];
+
+      const getElement = () => {
+        const el = Number(document.getElementById("element").value);
+        document.write("Array is ")
+        for (let i = 0; i < arr.length; i++) {
+          document.write(`${arr[i]} `);
+        }
+        document.write(`<br/> My selected element is ${arr[el]}`);
+      };
+    </script>
+  </body>
+</html>

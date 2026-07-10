@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert</title>
+  </head>
+  <body>
+    <label for="">New Element</label>
+    <input type="text" id="newElement" />
+    <br />
+    <label for="">Insert posistion</label>
+    <input type="text" id="position" />
+    <button onclick="Insert()">Submit</button>
+
+    <script>
+      let arr = [34, 65, 23, 56, 76, 98, 24];
+      document.write("<br/> Prev arrary was: ", arr);
+
+      const Insert = () => {
+        let newEl = Number(document.getElementById("newElement").value);
+        let position = Number(document.getElementById("position").value);
+        console.log("posision", position);
+        console.log("element", newEl);
+        for (let i = arr.length - 1; i >= position; i--) {
+          arr[i + 1] = arr[i];
+          if (i === position) {
+            arr[position] = newEl;
+          }
+        }
+        console.log(arr);
+      };
+    </script>
+  </body>
+</html>

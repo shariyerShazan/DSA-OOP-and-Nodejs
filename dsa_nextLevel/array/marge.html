@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr1 = [34, 65, 23, 56, 76, 98, 24];
+      let arr2 = [24, 35, 26, 81, 16, 38, 77, 100];
+      let count = 0;
+      let arr = Array(arr1.length, arr2.length);
+      for (let i = 0; i < arr1.length - 1; i++) {
+        arr[count] = arr1[i];
+        count++
+      }
+      for (let i = 0; i < arr2.length - 1; i++) {
+        arr[count] = arr2[i];
+        count++
+      }
+      console.log(arr.sort((a,b)=> a-b));
+    </script>
+  </body>
+</html>

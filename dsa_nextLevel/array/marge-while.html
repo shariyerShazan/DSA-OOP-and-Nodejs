@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr1 = [34, 65, 23, 56, 76, 98, 24].sort((a, b) => a - b);
+      let arr2 = [24, 35, 26, 81, 16, 38, 77, 100].sort((a, b) => a - b);
+      let count = 0;
+      let count1 = 0,
+        count2 = 0;
+      let arr = [];
+      while (arr.length < arr1.length + arr2.length) {
+        if (arr1[count1] < arr2[count2]) {
+          arr[count] = arr1[count1];
+          count++;
+          count1++;
+        } else {
+          arr[count] = arr2[count2];
+          count++;
+          count2++;
+        }
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

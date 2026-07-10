@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+  </head>
+  <body>
+    <label for="">Search</label>?
+    <input type="number" name="InputSearch" id="InputSearch" />
+    <button onclick="search()">Submit</button>
+    <br />
+    <script>
+      let arr = [34, 65, 23, 56, 76, 98, 24];
+      document.write("Prev array is: ", arr);
+
+      const search = () => {
+        let inp = Number(document.getElementById("InputSearch").value);
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === inp) {
+            console.log(
+              `Your input is ${inp}. and the input's position is ${i}`,
+            );
+            continue;
+          } else {
+            console.log(`Not found in position: ${i}`);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

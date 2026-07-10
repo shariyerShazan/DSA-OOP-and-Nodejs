@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>delete</title>
+  </head>
+  <body>
+    <br />
+    <label for="">Insert posistion For delete</label>
+    <input type="text" id="position" />
+    <button onclick="Delete()">Submit</button>
+
+    <script>
+      let arr = [34, 65, 23, 56, 76, 98, 24];
+      document.write("<br/> Prev arrary was: ", arr);
+
+      const Delete = () => {
+        let position = Number(document.getElementById("position").value);
+        console.log("posision", position);
+        for (let i = position; i < arr.length - 1; i++) {
+          arr[i] = arr[i + 1];
+        }
+        console.log(arr);
+      };
+    </script>
+  </body>
+</html>
